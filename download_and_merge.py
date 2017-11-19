@@ -6,6 +6,7 @@ from os import path
 import urllib.request
 import ssl
 import gzip
+import time
 
 
 PAIRS = ['BTC-BCC', 'BTC-DASH', 'BTC-EDG', 'BTC-ETC', 'BTC-ETH', 'BTC-LTC', 'BTC-MTL', 'BTC-NEO',
@@ -46,6 +47,7 @@ for pair in PAIRS:
     #print("New Start:", data[1])
     print("New End: ", data[-1:])
     data = sorted(data, key=lambda data: data['T'])
+    time.sleep(5)
 
 
     with gzip.open(filename, "wt") as fp:
