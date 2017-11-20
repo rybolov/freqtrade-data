@@ -11,44 +11,59 @@ import time
 
 PAIRS = ['BTC-BCC', 'BTC-DASH', 'BTC-EDG', 'BTC-ETC', 'BTC-ETH', 'BTC-LTC', 'BTC-MTL', 'BTC-NEO',
          'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC-QTUM', 'BTC-SNT', 'BTC-XMR', 'BTC-XRP', 'BTC-XZC', 'BTC-ZEC']
+#PAIRS = ['BTC-BCC']
+INTERVALS = {
+    "1": {"query_interval": "oneMin"},
+    "5": {"query_interval": "fiveMin"}
+}
 
 OUTPUT_DIR = path.dirname(path.realpath(__file__))
+interval = "1"
+
+def main():
+    for pair in PAIRS:
+        for interval in INTERVALS:
+            print('========== Generating', pair, ' ==========')
+            filepair = pair.replace("-", "_")
+            filename = path.join(OUTPUT_DIR, '{}-{}.json.gz'.format(
+                filepair,
+                interval,
+            ))
+
+            print(filename)
+
+            if path.isfile(filename):
+                with gzip.open(filename, "rt") as fp:
+                    data = json.load(fp)
+                print("Current Start:", data[1])
+                print("Current End: ", data[-1:])
+            else:
+                data = []
+                print("Current Start: None")
+                print("Current End: None")
+            new_data = get_ticker(pair, interval)
+            for row in new_data:
+                if row not in data:
+                    data.append(row)
+            print("New Start:", data[1])
+            print("New End: ", data[-1:])
+            data = sorted(data, key=lambda data: data['T'])
+
+            with gzip.open(filename, "wt") as fp:
+                json.dump(data, fp)
+            time.sleep(5)
 
 
-for pair in PAIRS:
-    print('========== Generating', pair, ' ==========')
 
-    filename = path.join(OUTPUT_DIR, '{}.json.gz'.format(
-        pair.lower(),
-    ))
-    print(filename)
-
-    if path.isfile(filename):
-        with gzip.open(filename, "rt") as fp:
-            data = json.load(fp)
-        print("Current Start:", data[1])
-        print("Current End: ", data[-1:])
-    else:
-        data=[]
-        print("Current Start: None")
-        print("Current End: None")
-
-
-
-    query = 'https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=' + pair + '&tickInterval=oneMin'
+def get_ticker(ticker, interval):
+    query = 'https://bittrex.com/Api/v2.0/pub/market/GetTicks?marketName=' + ticker + '&tickInterval=' + INTERVALS[interval]["query_interval"]
     print("Sending query:", query)
     req = urllib.request.urlopen(url=query, timeout=60, context=ssl._create_unverified_context())
-    new_data = json.loads(req.read())
-    new_data = new_data['result']
-
-    for row in new_data:
-        if row not in data:
-            data.append(row)
-    #print("New Start:", data[1])
-    print("New End: ", data[-1:])
-    data = sorted(data, key=lambda data: data['T'])
-    time.sleep(5)
+    out_data = json.loads(req.read())
+    out_data = out_data['result']
+    return out_data
 
 
-    with gzip.open(filename, "wt") as fp:
-        json.dump(data, fp)
+
+if __name__ == '__main__':
+    main()
