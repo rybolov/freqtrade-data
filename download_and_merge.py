@@ -9,7 +9,7 @@ import gzip
 import time
 
 
-PAIRS = ['BTC-BCC', 'BTC-DASH', 'BTC-EDG', 'BTC-ETC', 'BTC-ETH', 'BTC-LTC', 'BTC-MTL', 'BTC-NEO',
+PAIRS = ['BTC-BCC', 'BTC-BTG', 'BTC-DASH', 'BTC-EDG', 'BTC-ETC', 'BTC-ETH', 'BTC-LTC', 'BTC-MTL', 'BTC-NEO',
          'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC-QTUM', 'BTC-SNT', 'BTC-XMR', 'BTC-XRP', 'BTC-XZC', 'BTC-ZEC']
 #PAIRS = ['BTC-BCC']
 INTERVALS = {
