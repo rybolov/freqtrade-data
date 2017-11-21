@@ -35,8 +35,8 @@ def main():
             if path.isfile(filename):
                 with gzip.open(filename, "rt") as fp:
                     data = json.load(fp)
-                print("Current Start:", data[1])
-                print("Current End: ", data[-1:])
+                print("Current Start:", data[1]['T'])
+                print("Current End: ", data[-1:][0]['T'])
             else:
                 data = []
                 print("Current Start: None")
@@ -45,8 +45,8 @@ def main():
             for row in new_data:
                 if row not in data:
                     data.append(row)
-            print("New Start:", data[1])
-            print("New End: ", data[-1:])
+            print("New Start:", data[1]['T'])
+            print("New End: ", data[-1:][0]['T'])
             data = sorted(data, key=lambda data: data['T'])
 
             with gzip.open(filename, "wt") as fp:
