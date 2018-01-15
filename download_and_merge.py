@@ -9,8 +9,12 @@ import gzip
 import time
 
 
-PAIRS = ['USDT-BTC', 'BTC-BCC', 'BTC-BTG', 'BTC-DASH', 'BTC-EDG', 'BTC-ETC', 'BTC-ETH', 'BTC-LTC', 'BTC-MTL', 'BTC-NEO',
-         'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC-QTUM', 'BTC-SNT', 'BTC-XMR', 'BTC-XRP', 'BTC-XZC', 'BTC-ZEC']
+PAIRS = ['USDT-BTC', 'BTC-ADA', 'BTC-BCC', 'BTC-BTG', 'BTC-DASH',
+         'BTC-EDG', 'BTC_EMC2', 'BTC-ETC', 'BTC-ETH', 'BTC_LSK',
+         'BTC-LTC', 'BTC_MCO', 'BTC_MER', 'BTC-NEO', 'BTC-NXT',
+         'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC_POWR',
+         'BTC-QTUM', 'BTC-SNT', 'BTC_STRAT', 'BTC_VTC', 'BTC_WAVES',
+         'BTC_XLM', 'BTC-XMR', 'BTC-XRP', 'BTC-XZC', 'BTC-ZEC']
 #PAIRS = ['BTC-BCC']
 INTERVALS = {
     "1": {"query_interval": "oneMin"},
@@ -23,7 +27,7 @@ interval = "1"
 def main():
     for pair in PAIRS:
         for interval in INTERVALS:
-            print('========== Generating', pair, ' ==========')
+            print('========== Generating', pair, 'Interval:', interval, ' ==========')
             filepair = pair.replace("-", "_")
             filename = path.join(OUTPUT_DIR, '{}-{}.json.gz'.format(
                 filepair,
