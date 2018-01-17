@@ -10,11 +10,11 @@ import time
 
 
 PAIRS = ['USDT-BTC', 'BTC-ADA', 'BTC-BCC', 'BTC-BTG', 'BTC-DASH',
-         'BTC-EDG', 'BTC_EMC2', 'BTC-ETC', 'BTC-ETH', 'BTC_LSK',
-         'BTC-LTC', 'BTC_MCO', 'BTC_MER', 'BTC-NEO', 'BTC-NXT',
-         'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC_POWR',
-         'BTC-QTUM', 'BTC-SNT', 'BTC_STRAT', 'BTC_VTC', 'BTC_WAVES',
-         'BTC_XLM', 'BTC-XMR', 'BTC-XRP', 'BTC-XZC', 'BTC-ZEC']
+         'BTC-EDG', 'BTC-EMC2', 'BTC-ETC', 'BTC-ETH', 'BTC-LSK',
+         'BTC-LTC', 'BTC-MCO', 'BTC_MER', 'BTC-NEO', 'BTC-NXT',
+         'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC-POWR',
+         'BTC-QTUM', 'BTC-SNT', 'BTC-STRAT', 'BTC-VTC', 'BTC-WAVES',
+         'BTC-XLM', 'BTC-XMR', 'BTC-XRP', 'BTC-XZC', 'BTC-ZEC']
 #PAIRS = ['BTC-BCC']
 INTERVALS = {
     "1": {"query_interval": "oneMin"},
@@ -22,7 +22,7 @@ INTERVALS = {
 }
 
 OUTPUT_DIR = path.dirname(path.realpath(__file__))
-interval = "1"
+#interval = "1"
 
 def main():
     for pair in PAIRS:
@@ -48,6 +48,7 @@ def main():
                 print("Current Start: None")
                 print("Current End: None")
             new_data = get_ticker(pair, interval)
+            print("Working on the merge....")
             for row in new_data:
                 if row not in data:
                     data.append(row)
@@ -67,6 +68,7 @@ def get_ticker(ticker, interval):
     req = urllib.request.urlopen(url=query, timeout=60, context=ssl._create_unverified_context())
     out_data = json.loads(req.read())
     out_data = out_data['result']
+    print("Done!")
     return out_data
 
 
