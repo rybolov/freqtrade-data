@@ -11,7 +11,7 @@ import time
 
 PAIRS = ['USDT-BTC', 'BTC-ADA', 'BTC-BCC', 'BTC-BTG', 'BTC-DASH',
          'BTC-EDG', 'BTC-EMC2', 'BTC-ETC', 'BTC-ETH', 'BTC-LSK',
-         'BTC-LTC', 'BTC-MCO', 'BTC_MER', 'BTC-NEO', 'BTC-NXT',
+         'BTC-LTC', 'BTC-MCO', 'BTC-MER', 'BTC-NEO', 'BTC-NXT',
          'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC-POWR',
          'BTC-QTUM', 'BTC-SNT', 'BTC-STRAT', 'BTC-VTC', 'BTC-WAVES',
          'BTC-XLM', 'BTC-XMR', 'BTC-XRP', 'BTC-XZC', 'BTC-ZEC']
