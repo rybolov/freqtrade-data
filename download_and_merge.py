@@ -8,12 +8,18 @@ import ssl
 import gzip
 import time
 
-PAIRS = ['USDT-BTC', 'BTC-ADA', 'BTC-ARDR', 'BTC-ARK', 'BTC-BAT', 'BTC-BCC', 'BTC-BTG', 'BTC-CVC', 'BTC-DASH', 'BTC-DGB',
-         'BTC-EDG', 'BTC-EMC2', 'BTC-ETC', 'BTC-ETH', 'BTC-FUN', 'BTC-GNT', 'BTC-LSK',
-         'BTC-LTC', 'BTC-KMD', 'BTC-LSK', 'BTC-MANA', 'BTC-MCO', 'BTC-MER', 'BTC-MYST', 'BTC-NBT', 'BTC-NEO', 'BTC-NXT',
-         'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX', 'BTC-POWR', 'BTC-QRL',
-         'BTC-QTUM', 'BTC-RDD', 'BTC-SALT', 'BTC-SBD', 'BTC-SC', 'BTC-SNT', 'BTC-SPHR', 'BTC-STEEM', 'BTC-STORJ', 'BTC-STRAT', 'BTC-VOX', 'BTC-VTC', 'BTC-WAVES', 'BTC-XCP',
-         'BTC-XEM', 'BTC-XLM', 'BTC-XMR', 'BTC-XMY', 'BTC-XDN', 'BTC-XRP', 'BTC-XVG', 'BTC-XZC', 'BTC-ZCL', 'BTC-ZEC']
+PAIRS = ['BTC-ADA', 'BTC-ARDR', 'BTC-ARK', 'BTC-BAT', 'BTC-BCC',
+         'BTC-BTG', 'BTC-CVC', 'BTC-DASH', 'BTC-DGB', 'BTC-EDG',
+         'BTC-EMC2', 'BTC-ETC', 'BTC-ETH', 'BTC-FUN', 'BTC-GNT',
+         'BTC-LSK', 'BTC-LTC', 'BTC-KMD', 'BTC-LSK', 'BTC-MANA',
+         'BTC-MCO', 'BTC-MER', 'BTC-MYST', 'BTC-NBT', 'BTC-NEO',
+         'BTC-NXT', 'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX',
+         'BTC-POWR', 'BTC-QRL','BTC-QTUM', 'BTC-RDD', 'BTC-SALT',
+         'BTC-SBD', 'BTC-SC', 'BTC-SNT', 'BTC-SPHR', 'BTC-STEEM',
+         'BTC-STORJ', 'BTC-STRAT', 'BTC-VOX', 'BTC-VTC', 'BTC-WAVES',
+         'BTC-XCP', 'BTC-XEM', 'BTC-XLM', 'BTC-XMR', 'BTC-XMY',
+         'BTC-XDN', 'BTC-XRP', 'BTC-XVG', 'BTC-XZC', 'BTC-ZCL',
+         'BTC-ZEC']
 
 #PAIRS = ['BTC-BCC']
 INTERVALS = {
@@ -33,8 +39,6 @@ def main():
                 filepair,
                 interval,
             ))
-
-            filename = filename.replace('USDT_BTC', 'BTC_FAKEBULL')
 
             print(filename)
 
