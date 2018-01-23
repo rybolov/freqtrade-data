@@ -87,9 +87,9 @@ def main():
             print("New End: ", data[-1:][0]['T'])
             print(len(data), "tickers in aggregate after the merge.")
 
-            #with gzip.open(filename, "wt") as fp:
-            #    json.dump(data, fp)
-            #time.sleep(5)
+            with gzip.open(filename, "wt") as fp:
+                json.dump(data, fp)
+            time.sleep(5)
 
 
 
