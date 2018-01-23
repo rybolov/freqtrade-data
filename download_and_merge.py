@@ -89,7 +89,6 @@ def main():
 
             with gzip.open(filename, "wt") as fp:
                 json.dump(data, fp)
-            time.sleep(5)
 
 
 
