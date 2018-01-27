@@ -8,17 +8,24 @@ import ssl
 import gzip
 import time
 
-PAIRS = ['BTC-ADA', 'BTC-ARDR', 'BTC-ARK', 'BTC-BAT', 'BTC-BCC',
-         'BTC-BTG', 'BTC-CVC', 'BTC-DASH', 'BTC-DGB', 'BTC-EDG',
-         'BTC-EMC2', 'BTC-ETC', 'BTC-ETH', 'BTC-FUN', 'BTC-GNT',
-         'BTC-LSK', 'BTC-LTC', 'BTC-KMD', 'BTC-LSK', 'BTC-MANA',
-         'BTC-MCO', 'BTC-MER', 'BTC-MYST', 'BTC-NBT', 'BTC-NEO',
-         'BTC-NXT', 'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PIVX',
-         'BTC-POWR', 'BTC-QRL','BTC-QTUM', 'BTC-RDD', 'BTC-SALT',
-         'BTC-SBD', 'BTC-SC', 'BTC-SNT', 'BTC-SPHR', 'BTC-STEEM',
-         'BTC-STORJ', 'BTC-STRAT', 'BTC-VOX', 'BTC-VTC', 'BTC-WAVES',
-         'BTC-XCP', 'BTC-XEM', 'BTC-XLM', 'BTC-XMR', 'BTC-XMY',
-         'BTC-XDN', 'BTC-XRP', 'BTC-XVG', 'BTC-XZC', 'BTC-ZCL',
+
+PAIRS = ['BTC-ABY', 'BTC-ADA', 'BTC-ADT', 'BTC-AEON', 'BTC-ARDR',
+         'BTC-ARK', 'BTC-BAT', 'BTC-BCC', 'BTC-BCY', 'BTC-BSD',
+         'BTC-BTG', 'BTC-BYC', 'BTC-CFI', 'BTC-CLAM', 'BTC-CLOAK',
+         'BTC-CVC', 'BTC-DASH', 'BTC-DCR', 'BTC-DCT', 'BTC-DGB',
+         'BTC-DNT', 'BTC-DYN', 'BTC-EDG', 'BTC-EMC2', 'BTC-ERC',
+         'BTC-ETC', 'BTC-ETH', 'BTC-FCT', 'BTC-FUN', 'BTC-GBYTE',
+         'BTC-GNT', 'BTC-IOP', 'BTC-KMD', 'BTC-LSK', 'BTC-LTC',
+         'BTC-LSK', 'BTC-MAID', 'BTC-MANA', 'BTC-MCO', 'BTC-MER',
+         'BTC-MYST', 'BTC-NBT', 'BTC-NEO', 'BTC-NXC', 'BTC-NXT',
+         'BTC-OK', 'BTC-OMG', 'BTC-PAY', 'BTC-PDC', 'BTC-PIVX',
+         'BTC-POWR', 'BTC-QRL','BTC-QTUM', 'BTC-RBY', 'BTC-RCN',
+         'BTC-RDD', 'BTC-RISE', 'BTC-SALT', 'BTC-SBD', 'BTC-SC',
+         'BTC-SIB', 'BTC-SLS','BTC-SNT', 'BTC-SPHR', 'BTC-STEEM',
+         'BTC-STORJ', 'BTC-STRAT', 'BTC-THC', 'BTC-TIX', 'BTC-UBQ',
+         'BTC-VOX', 'BTC-VTC', 'BTC-WAVES', 'BTC-XCP', 'BTC-XEM',
+         'BTC-XLM', 'BTC-XMG', 'BTC-XMR', 'BTC-XMY', 'BTC-XDN',
+         'BTC-XRP', 'BTC-XVC', 'BTC-XVG', 'BTC-XZC', 'BTC-ZCL',
          'BTC-ZEC']
 
 #PAIRS = ['BTC-BCC']
