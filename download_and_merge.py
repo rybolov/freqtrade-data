@@ -10,7 +10,7 @@ import time
 
 
 PAIRS = [
-        '1ST',
+        'BTC-1ST',
         'BTC-2GIVE',
         'BTC-ABY',
         'BTC-ADA',
