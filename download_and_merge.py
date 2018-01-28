@@ -270,12 +270,14 @@ def main():
             if len(data) > 0:
                 print("New Start:", data[1]['T'])
                 print("New End: ", data[-1:][0]['T'])
+                print(len(data), "tickers in aggregate after the merge.")
+                with gzip.open(filename, "wt") as fp:
+                    json.dump(data, fp)
             else:
                 print ("Data set is empty: no start or end.  Check if ticker exists.")
-            print(len(data), "tickers in aggregate after the merge.")
 
-            with gzip.open(filename, "wt") as fp:
-                json.dump(data, fp)
+
+
 
 
 
