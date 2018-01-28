@@ -166,7 +166,7 @@ PAIRS = [
         'BTC-STEEM',
         'BTC-STORJ',
         'BTC-STRAT',
-        #'BTC-SWIFT',
+        'BTC-SWIFT',
         'BTC-SWT',
         'BTC-SYNX',
         'BTC-SYS',
